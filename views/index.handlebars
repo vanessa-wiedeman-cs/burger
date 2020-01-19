@@ -1,25 +1,39 @@
-<h1>BURGER!</h1>
+<h1>Veggies!</h1>
 
-<h2>Burger not eaten</h2>
+<h2>Veggies not eaten >:O</h2>
 
-<ul>
+<div>
   {{#each burgers}}
-<!--    {{#unless this.devoured}}
-      {{> burgers/burger-block devoured=true}}
-    {{/unless}}
-  {{/each}} -->
-</ul>
+  {{#unless devoured}}
+   <p>{{burger_name}}</p>
+   <button>Eat the Veggie!</button>
+  {{/unless}}
+  {{/each}}
+</div>
+
+<div>
+  {{#each burgers}}
+  {{#if devoured}}
+    <p>{{burger_name}}</p>
+{{/if}}
+    {{/each}}
+</div>
+
+<div>
+  <form action="/api/burgers" method="POST">
+	<textarea type="text" name="burger_name"></textarea>
+
+	<button type="submit">New Veggie</button>
+</form>
+</div>
+
 <!--
 <h2>Burgers that are eaten!</h2>
 
 <ul>
-  {{#each burger}}
-    {{#if devoured}}
-      {{> burgers/burger-block devoured=false}}
-    {{/if}}
-  {{/each}}
+ 
 </ul>
--->
+
 <h2>Add a Burger</h2>
 <form class="create-form">
 
@@ -36,3 +50,4 @@
 
   <button type="submit">Add Burger</button>
 </form>
+-->
