@@ -12,19 +12,20 @@ router.get("/", function(req, res) {
       burgers: data
     };
     console.log(hbsObject);
+    //potential error
     res.render("index", hbsObject);
   });
 });
 
 router.post("/api/burgers", function(req, res) {
-  burger.create([
-    "burger_name", "devoured"
-  ], [
-    req.body.burger_name, req.body.devoured
-  ], function(result) {
+  
+  var data = {burger_name: req.body.burger_name, devoured: req.body.devoured};
+  burger.create(data, function(result) {
     // Send back the ID of the new quote
-    res.json({ id: result.insertId });
+    console.log(result);
+   // res.redirect("/");
   });
+  //res.redirect('/');
 });
 
 router.put("/api/burgers/:id", function(req, res) {

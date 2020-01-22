@@ -20,34 +20,30 @@
 </div>
 
 <div>
-  <form action="/api/burgers" method="POST">
-	<textarea type="text" name="burger_name"></textarea>
+	<input id="veggieN" type="text" name="burger_name"></input>
+  <input id="eaten" type="hidden" name ="devoured" value="0"></input>
+ <!--<input type="submit" value="Button">-->
+	<button id="clicks">New Veggie</button>
 
-	<button type="submit">New Veggie</button>
-</form>
+
 </div>
 
-<!--
-<h2>Burgers that are eaten!</h2>
 
-<ul>
- 
-</ul>
+<script>
+  $("#clicks").click(function(e){
+    e.preventDefault();
+    postVeggie();
+  });
+ function postVeggie (){
+   //e.preventDefault();
+  var Veggie = {burger_name: $("#veggieN").val(), devoured: $("#eaten").val() }
+ $.ajax({
+      method: "POST",
+      url: "/api/burgers" ,
+      data: Veggie
+    }).then(function(data, err){
+      console.log("pls");
+    })
 
-<h2>Add a Burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="ca">Burger Name:</label>
-    <input type="text" id="ca" name="burger_name">
-  </div>
-
-  <div class="form-group">
-    <label for="devoured">Eaten?</label><br>
-    <input type="radio" name="devoured" value="1" checked> Ate burger!<br>
-    <input type="radio" name="devoured" value="0"> No eat
-  </div>
-
-  <button type="submit">Add Burger</button>
-</form>
--->
+  }
+</script>
