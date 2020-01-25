@@ -15,21 +15,26 @@
    <button class="getEat" data-veggieid="{{this.id}}">Eat the Veggie!</button>
   {{/unless}}
   {{/each}}
+  <br>
 </div>
 
 <div class="col" style="background-color: #b3ffb3;">
+  <br>
   <h2>Eaten Veggies</h2>
   {{#each burgers}}
   {{#if devoured}}
     <p>{{burger_name}}</p>
 {{/if}}
     {{/each}}
+    <br>
 </div>
 
 <br>
 
 <div class="row">
   <div class="col" style="background-color: #b3ffb3;">
+<br>
+<br>
 <div>
 	<input id="veggieN" type="text" name="burger_name"></input>
   <input id="eaten" type="hidden" name ="devoured" value="0"></input>
