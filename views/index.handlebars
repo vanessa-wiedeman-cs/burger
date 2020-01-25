@@ -6,7 +6,8 @@
 </br>
 <div class="container">
 <div class="row">
-<div class="col">
+<div class="col" style="background-color: #b3ffb3;">
+  <br>
   <h2>Uneaten Veggies</h2>
   {{#each burgers}}
   {{#unless devoured}}
@@ -16,7 +17,7 @@
   {{/each}}
 </div>
 
-<div class="col">
+<div class="col" style="background-color: #b3ffb3;">
   <h2>Eaten Veggies</h2>
   {{#each burgers}}
   {{#if devoured}}
@@ -28,13 +29,15 @@
 <br>
 
 <div class="row">
-  <br>
+  <div class="col" style="background-color: #b3ffb3;">
+<div>
 	<input id="veggieN" type="text" name="burger_name"></input>
   <input id="eaten" type="hidden" name ="devoured" value="0"></input>
  <!--<input type="submit" value="Button">-->
-	<button id="clicks">New Veggie</button>
+	</div>
+  <button id="clicks">New Veggie</button>
 
-
+</div>
 </div>
 </div>
 </div>
