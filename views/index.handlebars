@@ -1,17 +1,23 @@
-<h1>Veggies!</h1>
+<header class="text-center" style="background-color: #b3ffb3;"><h1>Veggies!</h1>
 
 <h2>Veggies not eaten >:O</h2>
-
-<div>
+<br>
+</header>
+</br>
+<div class="container">
+<div class="row">
+<div class="col">
+  <h2>Uneaten Veggies</h2>
   {{#each burgers}}
   {{#unless devoured}}
    <p>{{burger_name}}</p>
-   <button>Eat the Veggie!</button>
+   <button class="getEat" data-veggieid="{{this.id}}">Eat the Veggie!</button>
   {{/unless}}
   {{/each}}
 </div>
 
-<div>
+<div class="col">
+  <h2>Eaten Veggies</h2>
   {{#each burgers}}
   {{#if devoured}}
     <p>{{burger_name}}</p>
@@ -27,12 +33,15 @@
 
 
 </div>
-
+</div>
+</div>
 
 <script>
+  
   $("#clicks").click(function(e){
     e.preventDefault();
     postVeggie();
+    window.location.replace("/");
   });
  function postVeggie (){
    //e.preventDefault();
@@ -42,8 +51,28 @@
       url: "/api/burgers" ,
       data: Veggie
     }).then(function(data, err){
-      console.log("pls");
+     // console.log("pls");
     })
 
-  }
+  } 
+
+  $(".getEat").on("click", function(event) {
+    var id = $(this).data("veggieid");
+  console.log(id);
+    var newVeggieState = {
+      devoured: 1
+    };
+
+    // Send the PUT request.
+    $.ajax("/api/burgers/"+id, {
+      type: "PUT",
+      data: newVeggieState
+    }).then(
+      function() {
+        console.log("changed veggie to", newVeggieState);
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });
 </script>

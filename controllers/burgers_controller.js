@@ -22,8 +22,10 @@ router.post("/api/burgers", function(req, res) {
   var data = {burger_name: req.body.burger_name, devoured: req.body.devoured};
   burger.create(data, function(result) {
     // Send back the ID of the new quote
+    //console.log("Tesssst");
     console.log(result);
-   // res.redirect("/");
+    res.redirect("/");
+    console.log("redirect");
   });
   //res.redirect('/');
 });
