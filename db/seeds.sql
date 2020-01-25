@@ -1,3 +1,3 @@
-INSERT INTO burgers (burger_name, devoured) VALUES ('Plain Burger', 0);
-INSERT INTO burgers (burger_name, devoured) VALUES ('Chicken Burger', 0);
-INSERT INTO burgers (burger_name, devoured) VALUES ('Cheese Burger', 1);
+INSERT INTO burgers (burger_name, devoured) VALUES ('Potato', 0);
+INSERT INTO burgers (burger_name, devoured) VALUES ('Apple', 0);
+INSERT INTO burgers (burger_name, devoured) VALUES ('SaladcreateAt', 1);
