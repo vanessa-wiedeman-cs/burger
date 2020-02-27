@@ -1,5 +1,5 @@
 # burger
-# Test-Project-1
+# Veggie Eater
 
 Project Requirements:
 
