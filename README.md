@@ -13,9 +13,9 @@ Project Requirements:
 
   - Uses heroku
 
-  - Uses JawsDb (MySql)
+  - Uses JawsDb (MySql) 
   
-  - Uses JS
+  - Uses JS 
 
   - Simple Front-end/UI using bootstrap
 
