@@ -7,7 +7,7 @@ Project Requirements:
 
   - Create a website that allows a user to add veggies and eat them. 
   
- Project link: https://safe-refuge-16333.herokuapp.com/
+ Project link: https://safe-refuge-16333.herokuapp.com/ 
 
 - Requirements: 
 
