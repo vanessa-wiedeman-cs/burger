@@ -9,7 +9,7 @@ Project Requirements:
   
  Project link: https://safe-refuge-16333.herokuapp.com/ 
 
-- Requirements: 
+- Requirements:  
 
   - Uses heroku
 
